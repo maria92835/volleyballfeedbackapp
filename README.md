@@ -15,7 +15,8 @@ This project detects volleyballs in video footage by combining a YOLO-based obje
 - PyTorch (or relevant YOLO framework you are using)  
 - NumPy  
 
-##Future Improvements
+**##Future Improvements
+**
 Add pose estimation to analyze player movements alongside ball tracking.
 Upgrade to create a feedback app that gives feedback to volleyball serve videos as well as other plays such as sets, spikes, etc using ball speed, accuracy, control. 
 
