@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Volleyball Detection</title>
+</head>
+<body>
+    <h1>Upload a Volleyball Video</h1>
+    <input type="file" id="videoInput" accept="video/*">
+    <button onclick="uploadVideo()">Upload</button>
+    <br><br>
+    <video id="resultVideo" controls></video>
+
+    <script>
+        async function uploadVideo() {
+            let file = document.getElementById("videoInput").files[0];
+            let formData = new FormData();
+            formData.append("file", file);
+
+            let response = await fetch("https://volleyball-backend.onrender.com/upload", {
+                method: "POST",
+                body: formData
+            });
+
+            let blob = await response.blob();
+            document.getElementById("resultVideo").src = URL.createObjectURL(blob);
+        }
+    </script>
+</body>
+</html>
